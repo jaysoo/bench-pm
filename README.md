@@ -20,3 +20,27 @@ Summary
   after ran
    92.57 ± 16.10 times faster than before
 ```
+
+---
+
+To measure impact on graph creation, I've added some plugins, which all call `getPackageManagerCommand`, which then calls `getPackageManagerVersion`. I'm just running `nx report` without daemon, so the plugins load always.
+
+BEFORE (on "slow" branch, no `packageManager` field):
+
+```
+NX_DAEMON=false hyperfine "nx report"
+Benchmark 1: nx report
+  Time (mean ± σ):     594.0 ms ±  30.4 ms    [User: 301.6 ms, System: 96.7 ms]
+  Range (min … max):   559.4 ms … 667.5 ms    10 runs
+```
+
+AFTER:
+
+```
+NX_DAEMON=false hyperfine "nx report"
+Benchmark 1: nx report
+  Time (mean ± σ):     520.4 ms ±  54.1 ms    [User: 244.4 ms, System: 82.1 ms]
+  Range (min … max):   485.0 ms … 667.5 ms    10 runs
+```
+
+You can see, about 80ms difference. This difference grows larger the more plugins you use.

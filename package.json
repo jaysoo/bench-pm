@@ -4,5 +4,16 @@
   "packageManager": "yarn@3.2.4+md5.953c8233f7a92884eee2de69a1b92d1f2ec1655e66d08071ba9a02fa",
   "dependencies": {
     "nx": "^21.4.30-beta.1"
+  },
+  "devDependencies": {
+    "@nx/js": "^21.4.30-beta.1",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "@types/node": "18.16.9",
+    "nx": "21.4.30-beta.1",
+    "prettier": "^2.6.2",
+    "tslib": "^2.3.0",
+    "typescript": "~5.7.2"
   }
 }

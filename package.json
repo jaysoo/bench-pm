@@ -1,0 +1,8 @@
+{
+  "name": "test",
+  "private": true,
+  "packageManager": "yarn@3.2.4+md5.953c8233f7a92884eee2de69a1b92d1f2ec1655e66d08071ba9a02fa",
+  "dependencies": {
+    "nx": "^21.4.30-beta.1"
+  }
+}
